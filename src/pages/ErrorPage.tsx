@@ -22,8 +22,8 @@ function ErrorPage() {
 				Something Went Wrong!
 			</Heading>
 			<Heading as={"p"} size={"md"} fontWeight={"normal"}>
-				An unexpected error occurred while browsing. Try{" "}
-				<span style={{ color: "teal" }}>reloading</span> the page
+				An unexpected error occurred while browsing. Try reloading the
+				page
 			</Heading>
 		</>
 	);
