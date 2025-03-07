@@ -5,7 +5,7 @@ import { Outlet } from "react-router-dom";
 function Layout() {
 	return (
 		<>
-			<Box paddingX={3}>
+			<Box paddingX={7}>
 				<Box paddingTop={2}>
 					<NavBar />
 				</Box>

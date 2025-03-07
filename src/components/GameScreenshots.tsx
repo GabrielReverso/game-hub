@@ -18,7 +18,7 @@ const GameScreenshots = ({ gameId }: Props) => {
 				<Image
 					key={screenshot.id}
 					src={screenshot.image}
-					borderRadius={20}
+					borderRadius={10}
 				/>
 			))}
 		</SimpleGrid>

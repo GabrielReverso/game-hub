@@ -4,7 +4,7 @@ import GameScreenshots from "@/components/GameScreenshots";
 import GameTrailer from "@/components/GameTrailer";
 import useGame from "@/hooks/useGame";
 import keepOnlyEnglish from "@/utilities/keepOnlyEnglish";
-import { Heading, Spinner } from "@chakra-ui/react";
+import { GridItem, Heading, SimpleGrid, Spinner } from "@chakra-ui/react";
 import { useParams } from "react-router-dom";
 
 const GameDetailPage = () => {
@@ -18,13 +18,23 @@ const GameDetailPage = () => {
 	const description = keepOnlyEnglish(game.description_raw);
 
 	return (
-		<>
-			<Heading>{game.name}</Heading>
-			<ExpandableText>{description}</ExpandableText>
-			<GameAtributes game={game} />
-			<GameTrailer gameId={game.id} />
-			<GameScreenshots gameId={game.id} />
-		</>
+		<SimpleGrid
+			templateColumns={{
+				base: "1fr",
+				md: "1.5fr 1fr",
+			}}
+			spacing={5}
+		>
+			<GridItem>
+				<Heading marginBottom={5}>{game.name}</Heading>
+				<ExpandableText>{description}</ExpandableText>
+				<GameAtributes game={game} />
+			</GridItem>
+			<GridItem>
+				<GameTrailer gameId={game.id} />
+				<GameScreenshots gameId={game.id} />
+			</GridItem>
+		</SimpleGrid>
 	);
 };
 
