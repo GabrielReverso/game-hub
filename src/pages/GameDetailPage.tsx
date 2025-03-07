@@ -1,5 +1,6 @@
 import ExpandableText from "@/components/ExpandableText";
 import GameAtributes from "@/components/GameAtributes";
+import GameDetailSkeleton from "@/components/GameDetailSkeleton";
 import GameScreenshots from "@/components/GameScreenshots";
 import GameTrailer from "@/components/GameTrailer";
 import useGame from "@/hooks/useGame";
@@ -11,7 +12,7 @@ const GameDetailPage = () => {
 	const { slug } = useParams();
 	const { data: game, isLoading, error } = useGame(slug!); // variable! indicates that will never be null
 
-	if (isLoading) return <Spinner />;
+	if (isLoading) return <GameDetailSkeleton />;
 
 	if (error || !game) throw error;
 
