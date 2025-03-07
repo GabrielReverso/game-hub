@@ -1,5 +1,6 @@
 import ExpandableText from "@/components/ExpandableText";
 import GameAtributes from "@/components/GameAtributes";
+import GameScreenshots from "@/components/GameScreenshots";
 import GameTrailer from "@/components/GameTrailer";
 import useGame from "@/hooks/useGame";
 import keepOnlyEnglish from "@/utilities/keepOnlyEnglish";
@@ -22,6 +23,7 @@ const GameDetailPage = () => {
 			<ExpandableText>{description}</ExpandableText>
 			<GameAtributes game={game} />
 			<GameTrailer gameId={game.id} />
+			<GameScreenshots gameId={game.id} />
 		</>
 	);
 };
