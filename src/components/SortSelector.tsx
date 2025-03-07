@@ -21,7 +21,11 @@ const SortSelector = () => {
 
 	return (
 		<Menu>
-			<MenuButton as={Button} rightIcon={<BsChevronDown />}>
+			<MenuButton
+				maxWidth={"250px"}
+				as={Button}
+				rightIcon={<BsChevronDown />}
+			>
 				Order by: {currentSortOrder?.label || "Relevance"}
 			</MenuButton>
 			<MenuList>

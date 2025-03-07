@@ -23,10 +23,13 @@ function HomePage() {
 				</GridItem>
 			</Show>
 			<GridItem area="main">
-				<Box paddingLeft={4}>
+				<Box marginBottom={5} paddingX={15}>
 					<GameHeading />
-					<Flex marginBottom={5}>
-						<Box marginRight={5}>
+					<Flex
+						marginBottom={5}
+						direction={{ base: "column", md: "row" }}
+					>
+						<Box marginRight={4} marginBottom={{ base: 5, md: 0 }}>
 							<PlatformSelector />
 						</Box>
 						<SortSelector />
