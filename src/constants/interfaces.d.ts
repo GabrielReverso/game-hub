@@ -1,3 +1,8 @@
+export interface Publisher {
+	id: number;
+	name: string;
+}
+
 export interface Platform {
 	id: number;
 	name: string;
@@ -14,16 +19,12 @@ export interface Game {
 	id: number;
 	name: string;
 	slug: string;
+	genres: Genre[];
+	publishers: Publisher[];
+	description_raw: string;
 	background_image: string;
 	parent_platforms: [{ platform: Platform }];
 	metacritic: number;
-}
-
-export interface GameDetails {
-	id: number;
-	name: string;
-	slug: string;
-	description_raw: string;
 }
 
 export interface GameQuery {
@@ -37,4 +38,11 @@ export interface FetchResponse<T> {
 	count: number;
 	next: string | null;
 	results: T[];
+}
+
+export interface Trailer {
+	id: number;
+	name: string;
+	preview: string;
+	data: { 480: string; max: string };
 }
